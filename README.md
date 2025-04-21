@@ -1,20 +1,20 @@
 # XYZ Energy Operations Analytics Dashboard
 
 ## Table of Contents
-1. Project Background  
-2. Executive Summary  
-3. Dashboard Overview  
-4. Objective  
-5. Key Metrics Analyzed  
-6. Technologies Used  
-7. Dataset Description  
-8. Analysis Process  
-   - Data Cleaning  
-   - Data Transformation  
-   - DAX Calculations  
-   - Visualization Design  
-9. Key Insights  
-10. Recommendations  
+1. [Project Background](#project-background)  
+2. [Executive Summary](#executive-summary)  
+3. [Dashboard Overview](#dashboard-overview)  
+4. [Objective](#objective)  
+5. [Key Metrics Analyzed](#key-metrics-analyzed)  
+6. [Technologies Used](#technologies-used)  
+7. [Dataset Description](#dataset-description)  
+8. [Analysis Process](#analysis-process)  
+   - [Data Cleaning](#data-cleaning)  
+   - [Data Transformation](#data-transformation)  
+   - [DAX Calculations](#dax-calculations)  
+   - [Visualization Design](#visualization-design)  
+9. [Key Insights](#key-insights)  
+10. [Recommendations](#recommendations)  
 
 ---
 
@@ -58,6 +58,8 @@ This dashboard transforms complex, multi‑source operational data into targeted
 ## Dashboard Overview  
 Left‑pane navigation buttons link to three bookmarked pages—Enrollment, Churn & Retention, and Revenue—each filtered by a global date‑range slicer (2021–2024).
 
+![Dashboard](https://github.com/user-attachments/assets/373acbd4-e117-456e-a921-aa3263f3de0c)
+
 ### 1. Enrollment Page  
 - KPI Cards: Total Customers, Churned Customers, Churn Rate, Avg Tenure, Total Subscription Revenue  
 - Donut Chart: Active vs. Churned split  
@@ -66,12 +68,16 @@ Left‑pane navigation buttons link to three bookmarked pages—Enrollment, Chur
 - Line Chart: Monthly Enrollments  
 - Map: Customer counts by Province & City
 
+![Dashboard2](https://github.com/user-attachments/assets/9e567fd6-9a4e-4ff0-9c98-a5dac886feee)
+
 ### 2. Churn & Retention Page  
 - Bar Chart: Churn Rate by Product Type  
 - Bar Chart: Cancellations by Contract Length Bucket  
 - Bar Chart: Churn Rate by Plan Name  
 - Bar Chart: Cancellations by Utility Provider  
 - Map: Churned customers by Province
+
+![Dashboard3](https://github.com/user-attachments/assets/438efb94-86df-427f-8a7a-438832c85124)
 
 ### 3. Revenue Page  
 - Bar Chart: Subscription Revenue by Sales Channel  
