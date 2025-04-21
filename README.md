@@ -61,31 +61,14 @@ Left‑pane navigation buttons link to three bookmarked pages—Enrollment, Chur
 ![Dashboard](https://github.com/user-attachments/assets/373acbd4-e117-456e-a921-aa3263f3de0c)
 
 ### 1. Enrollment Page  
-- KPI Cards: Total Customers, Churned Customers, Churn Rate, Avg Tenure, Total Subscription Revenue  
-- Donut Chart: Active vs. Churned split  
-- Bar Chart: Average Tenure by Province  
-- Bar Chart: Cancellations by Tenure Bucket  
-- Line Chart: Monthly Enrollments  
-- Map: Customer counts by Province & City
 
 ![Dashboard2](https://github.com/user-attachments/assets/9e567fd6-9a4e-4ff0-9c98-a5dac886feee)
 
 ### 2. Churn & Retention Page  
-- Bar Chart: Churn Rate by Product Type  
-- Bar Chart: Cancellations by Contract Length Bucket  
-- Bar Chart: Churn Rate by Plan Name  
-- Bar Chart: Cancellations by Utility Provider  
-- Map: Churned customers by Province
 
 ![Dashboard3](https://github.com/user-attachments/assets/438efb94-86df-427f-8a7a-438832c85124)
 
 ### 3. Revenue Page  
-- Bar Chart: Subscription Revenue by Sales Channel  
-- Bar Chart: Revenue by Product Type  
-- Bar Chart: Revenue by Utility Provider  
-- Line Chart: Monthly Revenue Trend  
-- Map: Revenue by Province  
-- KPI Cards: Flat subscription revenue metrics
 
 ---
 
