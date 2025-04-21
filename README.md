@@ -19,7 +19,7 @@
 ---
 
 ## Project Background  
-Summitt Energy is a Canadian energy retailer offering electricity, natural gas, and home services. Their Operations team supports customer enrollment, billing, and retention across multiple provincial utilities. To mirror their real‑world data challenges, this project:
+XYZ Energy is a Canadian energy retailer offering electricity, natural gas, and home services. Their Operations team supports customer enrollment, billing, and retention across multiple provincial utilities. To mirror their real‑world data challenges, this project:
 
 - **Generated** a synthetic dataset of **6,000** customers (2021–2024) with:
   - Messy text fields (regions, plan names, utility providers, sales channels)
@@ -42,11 +42,19 @@ Summitt Energy is a Canadian energy retailer offering electricity, natural gas, 
 The Power BI solution consists of three bookmarked pages, accessed via left‑pane buttons:
 
 1. **Enrollment**  
-   - Tracks customer counts, churn split, tenure distribution, monthly enrollment trends, and geographic spread  
+   - Tracks customer counts, churn split, tenure distribution, monthly enrollment trends, and geographic spread
+
+![Dashboard](https://github.com/user-attachments/assets/1220ffc8-73fa-4623-9cdb-4faf8f2b0606)
+
 2. **Churn**  
-   - Analyzes churn rates by product type, contract length bucket, plan tier, utility provider, and provincial geography  
+   - Analyzes churn rates by product type, contract length bucket, plan tier, utility provider, and provincial geography
+     
+![Dashboard2](https://github.com/user-attachments/assets/fb5832d5-a4f1-48b2-97e2-f534a14d0f10)
+ 
 3. **Revenue**  
-   - Compares subscription vs. usage‑based revenue by sales channel, product type, provider, and province; includes monthly revenue trend  
+   - Compares subscription vs. usage‑based revenue by sales channel, product type, provider, and province; includes monthly revenue trend
+
+ ![Dashboard3](https://github.com/user-attachments/assets/1aa9fe3f-3a35-4b7f-b1a8-1a051a10dfb2)
 
 A **date‑range slider** atop every page allows dynamic filtering between 2021 and 2024.
 
