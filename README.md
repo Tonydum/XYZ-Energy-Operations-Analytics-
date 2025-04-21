@@ -1,150 +1,166 @@
 # XYZ Energy Operations Analytics Dashboard
 
 ## Table of Contents
-1. [Project Background](#project-background)  
-2. [Executive Summary](#executive-summary)  
-3. [Dashboard Overview](#dashboard-overview)  
-4. [Objective](#objective)  
-5. [Key Metrics Analyzed](#key-metrics-analyzed)  
-6. [Technologies Used](#technologies-used)  
-7. [Dataset Description](#dataset-description)  
-8. [Analysis Process](#analysis-process)  
-   - [Data Cleaning](#data-cleaning)  
-   - [Data Transformation](#data-transformation)  
-   - [DAX Calculations](#dax-calculations)  
-   - [Visualization Design](#visualization-design)  
-9. [Key Insights](#key-insights)  
-10. [Recommendations](#recommendations)  
+1. Project Background  
+2. Executive Summary  
+3. Dashboard Overview  
+4. Objective  
+5. Key Metrics Analyzed  
+6. Technologies Used  
+7. Dataset Description  
+8. Analysis Process  
+   - Data Cleaning  
+   - Data Transformation  
+   - DAX Calculations  
+   - Visualization Design  
+9. Key Insights  
+10. Recommendations  
 
 ---
 
 ## Project Background  
-XYZ Energy’s Operations team needed a unified analytics solution to monitor customer enrollments, churn behavior, and subscription revenue across Canadian markets. To replicate their real‑world environment, we generated a synthetic dataset of **6,000** customers (2021–2024) with intentionally messy fields drawn from multiple systems. We then cleaned, transformed, and modeled the data to build a **three‑page Power BI dashboard**—covering Enrollment, Churn & Retention, and Revenue.
+XYZ Energy’s Operations team needed a unified analytics solution to monitor customer enrollments, churn behavior, and subscription revenue across Canadian markets. To replicate their real‑world environment, we generated a synthetic dataset of **6,000** customers (2021–2024) with intentionally messy fields drawn from multiple systems. We then cleaned, transformed, and modeled the data to build a **three‑page Power BI dashboard**—covering Enrollment, Churn & Retention, and Revenue.
 
 ---
 
 ## Executive Summary  
-- **6,000** total customers; **948** cancellations (15.8% churn).  
-- **Mid‑contract churn hotspot**: most cancellations occur between **7–12 months**.  
-- **Flat subscription revenue** of **\$472 K/month** from active customers.  
-- **Natural Gas** customers exhibit the highest churn rate (16.9%).  
-- **Flex** plans demonstrate the lowest churn (14%), indicating strong value perception.
+XYZ Energy’s Operations Analytics Dashboard delivers a comprehensive, data‑driven view of customer behavior, churn dynamics, and subscription revenue performance across Canada for the period **January 2021 through April 2025**. By synthesizing enrollment, tenure, churn, and revenue metrics into a single interactive report, we uncovered actionable insights to optimize retention, pricing, and operations.
+
+**Key Findings:**  
+- **Enrollment Trends:**  
+  - **6,000** total customer accounts; after an initial marketing surge in **January 2021** (630 enrollments), monthly sign‑ups stabilized around **480–550**.  
+  - Ontario (2,100), Quebec (1,200), and Alberta (900) account for **70%** of the customer base, with smaller provinces showing growth potential.  
+
+- **Churn Dynamics:**  
+  - Overall churn sits at **15.8%** (948 cancellations).  
+  - **Mid‑contract churn** peaks between **7–12 months** (~240 cancellations), with a secondary rise at the **24‑month** renewal point (~190).  
+  - **Natural Gas** customers churn highest (16.9%), followed by Electricity (15.3%) and Home Services (15.2%).  
+  - **Provider hotspots**: Enbridge customers churn at **21%**, Hydro Quebec at **19.5%**, indicating friction during the utility handoff or billing process.  
+  - **Plan performance**: “Flex” plans exhibit the lowest churn (~14%), demonstrating the value of flexible terms.  
+
+- **Subscription Revenue:**  
+  - Active customers generate **$472K/month** in flat subscription fees.  
+  - **Channel breakdown**: In‑Person ($110K), Email ($108K), Phone ($105K), Online ($100K), with **$60K** still uncategorized—data‑capture improvements needed.  
+  - **Product mix**: Electricity drives **$220K/mo**, Natural Gas **$160K**, and Home Services **$100K**.  
+  - **Geographic revenue**: Ontario ($170K), Quebec ($90K), Alberta ($70K); under‑penetration in Western and Atlantic provinces.  
+
+**Strategic Implications:**  
+- **Retention Focus**: Mid‑contract (months 4–12) is the most critical window—deploy automated check‑ins, loyalty bonuses, or value‑added offers to reduce churn.  
+- **Pricing Innovation**: Gap between flat‑rate revenue and actual usage opportunity suggests piloting hybrid plans (base fee + usage component) to capture incremental monthly billing.  
+- **Plan Design**: Expand “Flex” features into higher‑tier plans to leverage its lower churn profile.  
+- **Provider Collaboration**: Partner with Enbridge and Hydro Quebec to streamline enrollment handoffs, billing notifications, and customer communications.  
+- **Marketing Cadence**: Replicate the successful January campaign mid‑year to boost enrollments during slower months.  
+
+This dashboard transforms complex, multi‑source operational data into targeted, actionable intelligence—empowering XYZ Energy to enhance customer lifetime value, refine pricing strategy, and improve cross‑functional processes across Sales, Marketing, Customer Service, and Compliance teams.
 
 ---
 
 ## Dashboard Overview  
-Left‑pane navigation buttons link to three bookmarked pages:
+Left‑pane navigation buttons link to three bookmarked pages—Enrollment, Churn & Retention, and Revenue—each filtered by a global date‑range slicer (2021–2024).
 
-1. **Enrollment**  
-2. **Churn & Retention**  
-3. **Revenue**
+### 1. Enrollment Page  
+- KPI Cards: Total Customers, Churned Customers, Churn Rate, Avg Tenure, Total Subscription Revenue  
+- Donut Chart: Active vs. Churned split  
+- Bar Chart: Average Tenure by Province  
+- Bar Chart: Cancellations by Tenure Bucket  
+- Line Chart: Monthly Enrollments  
+- Map: Customer counts by Province & City
 
-A synchronized **date‑range slicer** (2021–2024) filters all visuals.
+### 2. Churn & Retention Page  
+- Bar Chart: Churn Rate by Product Type  
+- Bar Chart: Cancellations by Contract Length Bucket  
+- Bar Chart: Churn Rate by Plan Name  
+- Bar Chart: Cancellations by Utility Provider  
+- Map: Churned customers by Province
+
+### 3. Revenue Page  
+- Bar Chart: Subscription Revenue by Sales Channel  
+- Bar Chart: Revenue by Product Type  
+- Bar Chart: Revenue by Utility Provider  
+- Line Chart: Monthly Revenue Trend  
+- Map: Revenue by Province  
+- KPI Cards: Flat subscription revenue metrics
 
 ---
 
 ## Objective  
-Provide XYZ Energy’s leadership with a single pane of glass to:  
-- Track customer acquisition and retention in real time  
-- Identify high‑risk segments by product, plan, provider, and region  
-- Monitor flat‑rate subscription revenue performance  
-- Highlight optimal timing for retention interventions
+Provide XYZ Energy’s leadership with an interactive reporting tool to monitor customer acquisition and retention, identify high‑risk segments, and track subscription revenue performance—all in real time.
 
 ---
 
 ## Key Metrics Analyzed  
-- **Enrollment Metrics:**  
-  - Total vs. churned customers  
-  - Monthly enrollment trends  
-  - Average tenure by province  
-  - Customer distribution by city and province  
-- **Churn Metrics:**  
-  - Overall churn rate  
-  - Churn by product type, plan tier, contract length, utility provider  
-  - Cancellation timing within contract lifecycle  
-- **Revenue Metrics:**  
-  - Total subscription revenue (flat fee)  
-  - Revenue by sales channel, product type, provider, and province  
-  - Month‑over‑month revenue trend
+- Enrollment counts and churn split  
+- Average tenure by region  
+- Monthly sign‑up trends  
+- Overall and segment‑specific churn rates  
+- Subscription revenue by channel, product, provider, and province
 
 ---
 
 ## Technologies Used  
-- **Power BI Desktop** — data modeling and interactive reporting  
-- **Power Query (M)** — ETL for cleansing and shaping data  
-- **DAX** — calculated columns and measures  
-- **Python & Faker** — synthetic dataset generation
+- Power BI Desktop  
+- Power Query (M)  
+- DAX  
+- Python + Faker (for data simulation)
 
 ---
 
 ## Dataset Description  
-| Column                     | Description                                                                 |
-|----------------------------|-----------------------------------------------------------------------------|
-| `CustomerID`               | Unique identifier (CUST00001–CUST06000)                                     |
-| `EnrollmentDate`           | Date of customer signup                                                     |
-| `CancelDate`               | Date of cancellation (if any), always ≥ `EnrollmentDate`                    |
-| `Region`                   | Messy province string (e.g., “b.c.”, “ONTARIO ”) for cleanup practice       |
-| `Province`,`City`          | Clean Canadian province and city                                            |
-| `ProductType`              | Service: Electricity, Natural Gas, Home Services                            |
-| `PlanName`                 | Subscription tier with typos/variants (Basic, Standard, Premium, Flex, etc.)|
-| `ContractDurationMonths`   | Contract term (6, 12, 18, 24 months)                                        |
-| `Price`                    | Flat monthly subscription fee (CAD)                                         |
-| `SalesChannel`,`Source`    | Enrollment channel and lead source (messy then standardized)                |
-| `UtilityProvider`          | Provider name aligned to province (messy variants cleaned)                  |
-| `SupportTickets`           | Number of support cases opened                                              |
-| Derived columns            | `IsCancelled`, `TenureMonths`, `ContractLengthBucket`, `TenureBucket`       |
+- 6,000 customer records  
+- Includes: Customer ID, EnrollmentDate, CancelDate, ProductType, PlanName, Price, ContractDurationMonths, Province, City, SalesChannel, UtilityProvider, SupportTickets  
+- Generated and transformed to include derived fields such as:  
+  - IsCancelled  
+  - TenureMonths  
+  - ContractLengthBucket  
+  - TenureBucket  
 
 ---
 
 ## Analysis Process
 
 ### Data Cleaning  
-- **Trimmed & standardized** text fields to remove extra spaces and non‑printable characters.  
-- **Replaced** known typos/variants in `PlanName`, `SalesChannel`, `Source`, `UtilityProvider`.  
-- **Ensured** `CancelDate` always follows `EnrollmentDate`; regenerated invalid dates.
+- Removed whitespace and standardized casing  
+- Cleaned up inconsistent labels (e.g., “Hydro-One” → “Hydro One”)  
+- Ensured logical date sequencing (CancelDate ≥ EnrollmentDate)  
 
 ### Data Transformation  
-- **Mapped** utility providers to provinces, including messy variants for cleaning practice.  
-- **Generated** `IsCancelled` flag for churn segmentation.  
-- **Binned** `ContractDurationMonths` into `ContractLengthBucket` (e.g., “0–6 mo”, “7–12 mo”).  
-- **Calculated** `TenureMonths` and bucketed into `TenureBucket` for churn‑timing analysis.
+- Created buckets for tenure and contract durations  
+- Aligned provider names with provincial standards  
+- Added status flags for analysis (e.g., churned vs. active)
 
 ### DAX Calculations  
-- **Calculated Columns:**  
-  - `TenureMonths` = `DATEDIFF(EnrollmentDate, CancelDate or TODAY(), MONTH)`  
-  - `ContractLengthBucket` & `TenureBucket` via `SWITCH(TRUE(),…)`  
-- **Key Measures:**  
-  - `Total Customers` = `COUNTROWS()`  
-  - `Active Customers` & `Cancelled Customers` via `FILTER(IsCancelled)`  
-  - `Churn Rate` = `DIVIDE(Cancelled, Total)`  
-  - `Average Tenure (Months)` = `AVERAGE(TenureMonths)`  
-  - `Total Subscription Revenue` = `SUMX(FILTER(IsCancelled=No), Price)`  
-  - Revenue by segment = `SUM(Price)` with appropriate filters
+- TenureMonths  
+- Churn Rate  
+- Subscription Revenue  
+- Average Tenure  
+- Revenue by Dimension (Plan, Channel, Provider, Province)
 
 ### Visualization Design  
-- **KPI Cards**: at the top of each page for instant metrics.  
-- **Donut & Bar Charts**: Active vs. churn, churn segmentation by tenure, product, plan, provider.  
-- **Line Charts**: Enrollment and revenue trends over time.  
-- **Maps**: Geospatial distribution by province & city.  
-- **Bookmarks & Buttons**: For seamless page navigation; global date‑range slicer for consistency.
+- Clean, bookmark‑driven navigation  
+- Page‑specific KPI cards for fast interpretation  
+- Segment‑level breakdowns and geo‑maps for storytelling  
+- Slicers for dynamic filtering
 
 ---
 
 ## Key Insights  
-1. **Mid‑Contract Churn**: Highest cancellations in **7–12 months** bucket, suggesting targeted outreach at month 6.  
-2. **Product Vulnerability**: **Natural Gas** customers churn at **16.9%**—consider seasonally timed retention campaigns.  
-3. **Plan Flexibility**: **Flex** plans lowest churn at **14%**—flexible options improve stickiness.  
-4. **Provider Friction**: **Enbridge** and **Hydro Quebec** churn rates >19%—optimize handoff and communication processes.  
-5. **Revenue Concentration**: Subscription revenue of \$472 K/mo concentrated in Ontario and Email/In‑Person channels.
+1. Most customers churn between 7–12 months of tenure.  
+2. Natural Gas customers churn at the highest rate (16.9%).  
+3. Flex plans retain more customers than any other tier (~14% churn).  
+4. Revenue is driven primarily by customers in Ontario and through In‑Person and Email channels.  
+5. Enbridge and Hydro Quebec users show the highest churn and deserve focused operational review.
 
 ---
 
 ## Recommendations  
-1. **Retention Milestones**: Implement automated check‑ins/offers around month 4–6 and pre‑renewal at month 24.  
-2. **Hybrid Plan Launch**: Pilot subscriptions with a small usage component to capture incremental revenue.  
-3. **Flex Features Roll‑Out**: Introduce flexible billing terms to Standard and Premium tiers.  
-4. **Provider Partnership**: Collaborate with high‑churn utilities to streamline enrollment workflows.  
-5. **Seasonal Promotions**: Mirror January marketing tactics in mid‑year to drive enrollment during slower periods.
+1. Deploy automated retention efforts at 4–6 and 11–12 months.  
+2. Experiment with hybrid pricing models to improve revenue capture.  
+3. Expand Flex plan offerings and embed flexibility into more tiers.  
+4. Audit onboarding experience for high‑churn providers.  
+5. Launch mid‑year marketing campaigns to replicate January’s success.
 
 ---
-*Prepared by Anthony Ofordum • GitHub: [tonydum126](https://github.com/tonydum126) • April 2025*  
+
+**Prepared by:** Anthony Ofordum  
+**GitHub:** [github.com/tonydum126](https://github.com/tonydum126)  
+**Date:** April 2025
